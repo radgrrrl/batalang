@@ -1,0 +1,107 @@
+((- Batalang v0.1: An esoteric programming language modelled after the 1966 Batman Theme -))
+((- This is a comment -))
+
+((-Programs will be stored in *.btl files and run via command line (at this time)
+
+    #batalang input-file.btl
+
+-))
+
+((- This denotes the beginning of the program -))
+(^V^)
+((- the end of the program block includes a lowercase v instead of uppercase -))
+(^v^)
+
+((- Code is split into sets of nana blocks, as seen below
+	Capitalization of the Ns determines most functionality
+	Capitalization of As could denote other functions, etc
+
+	nana nana nana nana nana nana nana nana Batman!
+
+	"Nana blocks" are basically shorthand for binary encoding, and can have a variable
+	size depending on the rest of the code. (More on this later)
+
+	tl;dr
+	nana nana Nana nana Nana nana nana Nana Batman!
+
+	This could have a value of 00101001, or 29 in hex, or 41 in decimal notation.
+
+ -))
+
+((-
+Tags for various structures, loops, etc can be blocked out with different bat symbols:
+("V") A string block ("v")
+(#V#) Numeric values could be more easily encoded this way
+(~V~) Loops (~v~)
+{"aVariableName"} <- variables will eventually be implemented
+[>V<] Batfleck block (an implementation of the "Brainf***" esolang) [>v<]
+
+You get the idea. -))
+
+((- Text encoding example: ("V")/("v")
+
+----------------------------------
+Char | binary  | batalang encoding
+----------------------------------
+H....= 0100 1000 = nana Nana nana nana Nana nana nana nana Batman!
+e... = 0110 0101 = nana Nana Nana nana nana Nana nana Nana Batman!
+l... = 0110 1100 = nana Nana Nana nana Nana Nana nana nana Batman!
+l... = 0110 1100 = nana Nana Nana nana Nana Nana nana nana Batman!
+o... = 0110 1111 = nana Nana Nana nana Nana Nana Nana Nana Batman!
+     = 0010 0000 = nana nana Nana nana nana nana nana nana Batman!
+w... = 0111 0111 = nana Nana Nana Nana nana Nana Nana Nana Batman!
+o... = 0110 1111 = nana Nana Nana nana Nana Nana Nana Nana Batman!
+r... = 0111 0010 = nana Nana Nana Nana nana nana Nana Nana Batman!
+l... = 0110 1100 = nana Nana Nana nana Nana Nana nana nana Batman!
+d... = 0110 0100 = nana Nana Nana nana nana Nana nana nana Batman!
+!... = 0010 0001 = nana nana Nana nana nana nana nana Nana Batman!
+
+	Since UTF-8 prefixes larger characters with 110, etc
+	Doing this could indicate the line is a 16 bit value.
+	
+	In these cases, you would capitalize the first and second
+	"n" for each "nana" block.	
+
+	I'm sure more things could be done with this.
+
+π... = 11001111 10000000 = NaNa nana NaNa NaNa Nana nana nana nana Batman!
+
+Lines can hold a variable bits similar to the way UTF-8
+	can use a variable number of bits for encoding.
+-[From Wikipedia]-----------------------------------------------
+# of	bits for
+bytes	code point 	Byte 1 		Byte 2		Byte 3 		Byte 4
+1		7 			0xxxxxxx 			
+2		11 			110xxxxx 	10xxxxxx 		
+3		16 			1110xxxx 	10xxxxxx 	10xxxxxx 	
+4		21 			11110xxx 	10xxxxxx 	10xxxxxx 	10xxxxxx
+----------------------------------------------------------------
+
+The first "nana" block will be checked for capitalization in text strings.
+nana = 1 byte	<-- Only capitalization of Ns will really matter
+NaNa = 2 bytes	<-- Only capitalization of Ns will really matter
+NANa = 3 bytes	<-- Capitalization of both Ns and As will matter
+NANA = 4 bytes	<-- Capitalization of both Ns and As will matter
+
+-))
+
+((- Number encoding example: (#V#)/(#v#)
+
+Numbers will be similar to text encoding. Variable bits. Up to 21 byte values 2,097,151
+(for now)
+Types similar to floats/doubles/etc might get added in at some point. (Or a BatDecimal class)
+
+-))
+
+((- Loops example: (~V~)/(~v~)
+
+The first line(s) of a loop determine the type of loop.
+
+If the "Batman!" on the first line is all caps, the binary value of the nana block
+is how many times the loop will run.
+
+That's all I have right now, but...
+Other types of looping will be implemented later on.
+
+-))
+

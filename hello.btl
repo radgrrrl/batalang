@@ -1,0 +1,72 @@
+((-Batalang "Hello world" example-))
+
+(^V^)
+((- Print 'Hello world to the console -))
+("V")
+nana Nana nana nana Nana nana nana nana Batman!
+nana Nana Nana nana nana Nana nana Nana Batman!
+nana Nana Nana nana Nana Nana nana nana Batman!
+nana Nana Nana nana Nana Nana nana nana Batman!
+nana Nana Nana nana Nana Nana Nana Nana Batman!
+nana nana Nana nana nana nana nana nana Batman!
+nana Nana Nana Nana nana Nana Nana Nana Batman!
+nana Nana Nana nana Nana Nana Nana Nana Batman!
+nana Nana Nana Nana nana nana Nana Nana Batman!
+nana Nana Nana nana Nana Nana nana nana Batman!
+nana Nana Nana nana nana Nana nana nana Batman!
+nana nana Nana nana nana nana nana Nana BATMAN! ((- Print text block -))
+("v")
+
+((- Modify the bits to change the previous string to "I'm Batman!" 
+H|e|l|l|o| |w|o|r|l|d
+I|'|m| |B|a|t|m|a|n|!
+                    Diff
+d = 100 | ! = 33    -67
+l = 108 | n = 110   +2
+r = 114 | a = 97    -17
+o = 111 | m = 109   -2
+w = 119 | t = 116   -3
+  =  32 | a = 97    +65
+o = 111 | B = 66    -45
+l = 108 |   = 32    -76
+l = 108 | m = 109   +1
+e = 101 | ' = 39    -62
+H =  72 | I = 73    +1
+ -))
+
+[>V<] ((-Begin "Batfleck" block-))
+nANa naNa naNa nana nana nana nana nana Batman! ((- Shift to 'd' cell, decrement 3 times-))
+(~V~)
+nana nana nana nana nana nana Nana nana BATMAN! ((-Loop 8 times-))
+naNa naNa naNa naNa naNa naNa naNa naNa Batman! ((- Decrement 8 times per loop -))
+(~v~)
+((- 'd' cell is now set to '!' -))
+NAna Nana nANa naNa naNa naNa naNa naNa Batman! ((-'l' shifted to n, start 'r' cell shift-))
+naNa naNa naNa naNa naNa naNa naNa naNa Batman! ((-continue shifting 'r' cell towards 'a'-))
+naNa naNa naNa nANa naNa nANa naNa naNa Batman! ((-finish 'r' cell, shift 'o' and 'w' cells-))
+NAna nana nana nana nana nana nana nana Batman! ((- Shift ' ' cell 1/65 times towards 'a' -))
+((-This Loop will increment ' ' cell 8*8 times-))
+(~V~)
+nana nana nana nana nana nana Nana nana BATMAN! ((-Loop 8x-))
+Nana Nana Nana Nana Nana Nana Nana Nana Batman! ((-Increment 8x-))
+(~v~)
+nANa naNa naNa naNa naNa nana nana nana Batman! ((-Shift to 'o' cell, decrement 5x-))
+(~V~)
+nana nana nana nana nana nana naNa naNa BATMAN! ((-Loop 5x-))
+naNa naNa naNa naNa naNa naNa naNa naNa Batman! ((-Decrement cell 8x each loop-))
+(~v~)
+nANa naNa naNa naNa nana nana nana nana Batman! ((-Shift to 'l' cell, decrement 4x-))
+(~V~)
+nana nana nana nana nana nana Nana naNa BATMAN! ((-Loop 9x-))
+naNa naNa naNa naNa naNa naNa naNa naNa Batman! ((-Decrement 'l' cell 8x each loop-))
+(~v~)
+NAna nANa naNa naNa naNa naNa naNa nana Batman! ((-Shift to next 'l' cell, increment 1x-))                                                 Shift to 'e' cell, decrement 6x -))
+(~V~)
+nana nana nana nana nana nana nana nana BATMAN! ((-Decrement 'e' cell 7x8 times-))
+naNa naNa naNa naNa naNa naNa naNa naNa Batman!
+(~v~)
+NAna nana nana nana nana nana nana nana BATMAN! ((-Increment 'H' cell by 1, print to console-))
+[>v<] ((-End "Batfleck" block-))
+
+(^v^) ((-End program-))
+
